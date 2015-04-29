@@ -8,19 +8,20 @@ public class PolygonTester: MonoBehaviour
     public int NumberOfSides = 3;
 
     [SerializeField]
-    public long RadialSize = 1;
-    private MeshFilter filter;
+    public float RadialSize = 50f;
+    public MeshFilter filter;
+    private MeshRenderer meshy;
+    public Vector2[] newShape = null;
 
     void Start()
     {
         // Set up game object with mesh;
-        gameObject.AddComponent(typeof(MeshRenderer));
-        filter = gameObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
+        meshy = gameObject.AddComponent<MeshRenderer>();
+        filter = gameObject.AddComponent<MeshFilter>();
     }
 
     Vector2[] NewVerticies()
     {
-        float circumference = 2 * Mathf.PI * RadialSize;
         Vector2[] verts = new Vector2[NumberOfSides];
 
         for (int i = 0; i < NumberOfSides; ++i)
@@ -31,7 +32,6 @@ public class PolygonTester: MonoBehaviour
 
         return verts;
     }
-
 
     Mesh calcMesh()
     {
@@ -60,5 +60,10 @@ public class PolygonTester: MonoBehaviour
     void Update()
     {
         filter.mesh = calcMesh();
+    }
+
+    public void hideMesh()
+    {
+        meshy.enabled = false;
     }
 }

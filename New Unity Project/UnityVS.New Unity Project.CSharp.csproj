@@ -56,9 +56,6 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -70,7 +67,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Director.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Assets\Scripts\PolygonTester.cs" />
+    <Compile Include="Assets\Scripts\ShapeRunner.cs" />
     <Compile Include="Assets\Scripts\Triangulator.cs" />
   </ItemGroup>
   <ItemGroup>
